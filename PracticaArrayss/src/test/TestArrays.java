@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import util.MisArrays;
+
 class TestArrays {
 	 
 	 private static int[] valoresValidos;
@@ -14,7 +16,7 @@ class TestArrays {
 	    @BeforeAll
 	    public static void setUp() {
 	    	valoresValidos = new int[] {3,6,8,9,10};
-	    	valoresInvalidos = new int [] {};
+	    	valoresInvalidos = new int [] {-1,6,7,8};
 	    	
 	   	 	
 	    }
@@ -25,6 +27,19 @@ class TestArrays {
 	    	float numeroObtenido = util.MisArrays.MediaNota(valoresValidos);
 	    	assertEquals(numeroEsperado,numeroObtenido);
 	    }
+	    @Test
+	    void pruebaMediaException() {
+	    	Exception exception = assertThrows(IllegalArgumentException.class,()->MisArrays.MediaNota(valoresInvalidos));
+	    	String numeroEsperado = "No hay notas o las notas están introducidas incorrectamente";
+	    	String numeroObtenido = exception.getMessage();
+	    	assertEquals(numeroEsperado,numeroObtenido);
+	    }
 	
+	    @Test
+	    void pruebaMediana() {
+	    	float numeroEsperado = (float) 8.0;
+	    	float numeroObtenido = util.MisArrays.mediana(valoresValidos);
+	    	assertEquals(numeroEsperado,numeroObtenido);
+	    }
 
 }
