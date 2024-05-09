@@ -7,10 +7,19 @@ public abstract class MisArrays {
 	protected int [] numeros = new int [10];
 	Scanner sc = new Scanner(System.in);
 	
+	/**
+	 * contructor para mi array
+	 * @param numeros
+	 */
 	
 	public MisArrays(int [] numeros) {
 		this.numeros=numeros;
 	}
+	/**
+	 *  Con este metodo hace la media de un array de las notas
+	 * @param numeros
+	 * @return devuelve el total sumado de todos los elementos del array entre la longitud del array
+	 */
 	
 	public static float MediaNota(int [] numeros) {
 		
@@ -25,6 +34,12 @@ public abstract class MisArrays {
 		return (float) total/numeros.length;
 	}
 	
+	/**
+	 * Realiza la mediana de una serie de numeros almacenados en un array coge el valor intermedio de dicho array
+	 * @param numeros
+	 * @return devuelve en el if el valor intermedio de un array si es par realizando la suma de los dos numeros y dividiendo entre 2
+	 */
+	
 	public static float mediana (int [] numeros) {
 		
 		if(numeros.length%2 ==0) {
@@ -36,6 +51,12 @@ public abstract class MisArrays {
 			return (float) numeros[numeros.length/2];
 		}
 	}
+	
+	/**
+	 * De un array saca el valor máximo
+	 * @param numeros
+	 * @return devuelve dicho numero tras compararlo con el resto
+	 */
 	
 	 public static int Maximo(int[] numeros) {
 		 for (int i = 0 ; i<numeros.length;i++) {  
@@ -58,6 +79,12 @@ public abstract class MisArrays {
 	        
 	        return maximo;
 	    }
+	 
+	 /**
+	  * Saca el valor minimo de un array
+	  * @param numeros
+	  * @return Devuelve el valor mínimo tras haberlo comparados
+	  */
 	 
 	 public static int Minimo(int[] numeros) {
 		 for (int i = 0 ; i<numeros.length;i++) {  
