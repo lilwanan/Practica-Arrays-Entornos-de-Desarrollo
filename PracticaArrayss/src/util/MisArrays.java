@@ -37,6 +37,50 @@ public abstract class MisArrays {
 		}
 	}
 	
+	 public static int Maximo(int[] numeros) {
+		 for (int i = 0 ; i<numeros.length;i++) {  
+	        if (numeros.length == 0 || numeros[i]<0||numeros[i]>10) {
+	            throw new IllegalArgumentException("No hay notas o las notas están introducidas incorrectamente");
+	        }
+		 }
+
+	        
+	        int maximo = numeros[0];
+
+	        
+	        for (int i = 1; i < numeros.length; i++) {
+	           
+	            if (numeros[i] > maximo) {
+	                maximo = numeros[i];
+	            }
+	        }
+
+	        
+	        return maximo;
+	    }
+	 
+	 public static int Minimo(int[] numeros) {
+		 for (int i = 0 ; i<numeros.length;i++) {  
+	        if (numeros.length == 0 || numeros[i]<0||numeros[i]>10) {
+	            throw new IllegalArgumentException("No hay notas o las notas están introducidas incorrectamente");
+	        }
+		 }
+
+	        
+	        int minimo = numeros[0];
+
+	        
+	        for (int i = 1; i < numeros.length; i++) {
+	           
+	            if (numeros[i] < minimo) {
+	                minimo = numeros[i];
+	            }
+	        }
+
+	        
+	        return minimo;
+	    }
+	
 	
 }
 
